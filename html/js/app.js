@@ -191,7 +191,7 @@ class Jobs extends UIElement {
         li1.innerHTML = name;
 
         let li2 = document.createElement('li');
-        li2.innerHTML = 'Salaris: € ' + salary;
+        li2.innerHTML = locale.get('text_salary') + salary;
 
         let li3 = document.createElement('li');
 
@@ -267,7 +267,7 @@ class Identity extends UIElement {
         li1.innerHTML = name;
 
         let li2 = document.createElement('li');
-        li2.innerHTML = 'Kosten: € ' + price;
+        li2.innerHTML = locale.get('text_cost') + price;
 
         let li3 = document.createElement('li');
 

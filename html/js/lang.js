@@ -36,6 +36,9 @@ let stringsEN = {
 
     "text_buy": "Buy",
     "text_apply": "Apply",
+
+    "text_cost": "Cost: € ",
+    "text_salary": "Salary: € ",
 }
 
 
