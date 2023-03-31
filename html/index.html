@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>More Than Code: Cityhall</title>
+
+    <link rel="stylesheet" href="./css/app.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <div id="mtcCityhall" class="animate__animated animate__fadeIn">
+        <div class="mtc-cityhall">
+            <div class="mtc-cityhall-header">
+                <div class="row">
+                    <div class="col">
+                        <div class="mtc-button red"></div>
+                        <div class="mtc-button yellow"></div>
+                        <div class="mtc-button green"></div>
+                    </div>
+                    <div class="col text-center">Los Santos City Hall</div>
+                    <div class="col text-end"></div>
+                </div>
+            </div>
+
+            <div class="mtc-content">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="mtc-user-info">
+                            <img src=""
+                                alt="Character image" id="charImage">
+                            <p id="charName">Char name</p>
+                            <p id="charCitizenID">Citizen ID</p>
+                        </div>
+                        <ul>
+                            <li id="Sidebar.job"><i class="fa-duotone fa-briefcase fa-fw"></i><a id="text_jobs"> Work </a></li>
+                            <li id="Sidebar.identity"><i class="fa-duotone fa-passport fa-fw"></i> <a id="text_items"> Items </a></li>
+                            <li id="Sidebar.information"><i class="fa-duotone fa-user-tie-hair fa-fw"></i> <a id="text_information"> Info </a></li>
+                            <li id="Sidebar.close"><i class="fa-duotone fa-sign-out fa-fw"></i> <a id="text_close"> Close </a></li>
+                        </ul>
+                    </div>
+                    <div class="col-8" id="selectJob">
+                        <div class="row" id="JobOptions">
+                        </div>
+                    </div>
+                    <div class="col-8" id="selectIdentity">
+                        <div class="row" id="IdentityOptions">
+                        </div>
+                    </div>
+
+                    <div class="col-8" id="selectInformation">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mtc-content">
+                                    <div class="mtc-content-inline">
+                                        <ul>
+                                            <li id="text_identification">Identification</li>
+                                            <li id="desc_identification">Description or something.
+                                            </li>
+                                            <li id="information.Items">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="mtc-content">
+                                    <div class="mtc-content-inline">
+                                        <ul>
+                                            <li id="text_licenses">Licenses</li>
+                                            <li id="desc_licenses">Description or something.</li>
+                                            <li id="information.Licenses">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js"
+        integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/bbfa2ecaa3.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/lang.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/listener.js"></script>
+    
+</body>
+
+</html>

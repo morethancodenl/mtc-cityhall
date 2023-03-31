@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap");
+:root {
+  --fontBase: "SF Pro Display", sans-serif;
+  --fontSize: 14px;
+  --colorBackground: 246, 248, 251;
+  --colorText: 68, 68, 68;
+  --primary: #54bbb2;
+  --primaryHover: #4eaca4;
+  --secondary: #bb545d;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-BlackItalic.woff2") format("woff2"), url("../fonts/SFProDisplay-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-HeavyItalic.woff2") format("woff2"), url("../fonts/SFProDisplay-HeavyItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-LightItalic.woff2") format("woff2"), url("../fonts/SFProDisplay-LightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-UltralightItalic.woff2") format("woff2"), url("../fonts/SFProDisplay-UltralightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-SemiboldItalic.woff2") format("woff2"), url("../fonts/SFProDisplay-SemiboldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-ThinItalic.woff2") format("woff2"), url("../fonts/SFProDisplay-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: var(--fontBase) !important;
+  font-size: var(--fontSize) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  scroll-behavior: smooth;
+  line-height: normal !important;
+  overflow: hidden !important;
+  height: 100%;
+  background: transparent !important;
+  background-color: transparent !important;
+  -webkit-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  scroll-behavior: smooth !important;
+}
+
+/* #selectIdentity,
+#selectInformation {
+  display: none;
+} */
+
+#mtcCityhall {
+  width: 850px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+#mtcCityhall .mtc-cityhall {
+  box-shadow: rgba(30, 41, 59, 0.6) 0 2px 4px 0;
+  border: 1px solid rgba(16, 23, 37, 0.16);
+  word-wrap: break-word;
+  background-color: rgba(16, 20, 24, 1);
+  background-clip: border-box;
+  border-radius: 10px;
+  transition: all 0.5s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+#mtcCityhall .mtc-cityhall .mtc-cityhall-header {
+  padding: 20px;
+  background-color: rgba(12, 14, 17, 1);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#mtcCityhall .mtc-cityhall .mtc-cityhall-header .text-center {
+  font-weight: 600;
+  color: #929297 !important;
+}
+#mtcCityhall .mtc-cityhall .mtc-cityhall-header .mtc-button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #545456;
+  display: inline-block;
+  margin: 0 1px 0 0;
+  transition: all 0.5s ease-out;
+  cursor: pointer;
+}
+#mtcCityhall .mtc-cityhall .mtc-cityhall-header .mtc-button.red {
+  background-color: #f65d54;
+}
+#mtcCityhall .mtc-cityhall .mtc-cityhall-header .mtc-button.yellow {
+  background-color: #f6c749;
+}
+#mtcCityhall .mtc-cityhall .mtc-cityhall-header .mtc-button.green {
+  background-color: #5ecf64;
+}
+#mtcCityhall .mtc-cityhall .mtc-cityhall-header .mtc-button:last-child {
+  margin: 0;
+}
+#mtcCityhall .mtc-cityhall .mtc-content {
+  overflow: hidden;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row * {
+  padding: 0;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .mtc-content {
+  box-shadow: rgba(30, 41, 59, 0.3) 0 2px 4px 0;
+  background-color: rgb(24, 27, 29);
+  border-radius: 10px;
+  width: 95%;
+  margin: 0 0 15px 0;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .mtc-content .mtc-content-inline {
+  padding: 20px;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .mtc-content .mtc-content-inline ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .mtc-content .mtc-content-inline ul li {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .mtc-content .mtc-content-inline ul li:first-child {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  font-size: 15px;
+  margin: 0 0 3px 0;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .mtc-content .mtc-content-inline ul li button {
+  margin: 10px 0 0 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 10px !important;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .mtc-content .mtc-content-inline ul li button.btn-secondary {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .mtc-content .mtc-content-inline ul li button.btn-secondary:hover {
+  background: var(--primaryHover);
+  border-color: var(--primaryHover);
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .mtc-content .mtc-content-inline ul li .badge {
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 15px 5px 0 0;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .col-8 {
+  border-bottom-right-radius: 10px;
+  padding: 20px;
+  height: 305px;
+  overflow-y: scroll;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .col-8::-webkit-scrollbar {
+  width: 20px;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .col-8::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .col-8::-webkit-scrollbar-button {
+  background-color: transparent;
+  display: none;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .col-8::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .col-8::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .col-8::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .col-4 {
+  background-color: rgb(24, 27, 29);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom-left-radius: 10px !important;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .col-4 ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .col-4 ul li {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.5s ease-out;
+  font-weight: 500;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.5s ease-out;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .col-4 ul li i {
+  font-size: 16px;
+  vertical-align: middle;
+  margin: 0 10px 0 0;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.5s ease-out;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .col-4 ul li:hover {
+  background: rgba(24, 27, 29, 0.5);
+  color: rgb(255, 255, 255);
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .col-4 ul li:hover i {
+  color: rgb(255, 255, 255);
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .col-4 ul li:last-of-type {
+  border-bottom: 0;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .row .col-4 .mtc-padding-20 {
+  padding: 20px;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .mtc-user-info {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+#mtcCityhall .mtc-cityhall .mtc-content .mtc-user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  float: left;
+  vertical-align: middle;
+  margin: -3px 15px 0 -5px;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .mtc-user-info p {
+  margin: 0;
+  padding: 0;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .mtc-user-info p:first-of-type {
+  font-weight: 500;
+  margin: 0 0 1px 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 190px;
+  white-space: nowrap;
+}
+#mtcCityhall .mtc-cityhall .mtc-content .mtc-user-info p:last-of-type {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/*# sourceMappingURL=app.css.map */
