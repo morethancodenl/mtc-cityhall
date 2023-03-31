@@ -1,5 +1,9 @@
 # MTC Cityhall
 
+## Our links
+- [Discord](https://discord.gg/APFHf9hhkG)
+- [Tebex (Paid scripts)](https://mtc.tebex.io/)
+
 ### How to use?
 
 1. Clone the repository
