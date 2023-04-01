@@ -6,15 +6,19 @@ window.addEventListener('message', (event) => {
             main.ShowCityhall();
             break;
         case 'jobs':
+            job.ClearJobs();
+
             event.data.jobs.forEach(jobdata => {
                 job.AddJob(jobdata);
             });
             break;
         case 'items':
+            identity.ClearIdentity();
+            
             event.data.items.forEach(identitydata => {
                 identity.AddButton(identitydata);
             });
-        break;
+            break;
         case 'information':
             information.ClearInformation();
 

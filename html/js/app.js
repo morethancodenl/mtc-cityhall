@@ -231,7 +231,7 @@ class Jobs extends UIElement {
     ClearJobs() {
         logs.Log('Clearing jobs...')
 
-        document.getElementById(this.id).innerHTML = '';
+        document.getElementById('JobOptions').innerHTML = '';
     }
 }
 
@@ -299,6 +299,12 @@ class Identity extends UIElement {
 
         div.appendChild(mtcContent);
         document.getElementById('IdentityOptions').appendChild(div);
+    }
+
+    ClearIdentity() {
+        logs.Log('Clearing identities...')
+
+        document.getElementById('IdentityOptions').innerHTML = '';
     }
 }
 

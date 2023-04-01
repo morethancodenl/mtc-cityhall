@@ -14,6 +14,8 @@ function NUI:Open()
     end
 
     self:SetupLicenses()
+    self:SetupJobs()
+    self:SetupItems()
 
     SendNUIMessage({
         type = 'open',
