@@ -10,14 +10,15 @@ RegisterNetEvent('mtc-cityhall:server:ApplyJob', function(id)
 end)
 
 RegisterNetEvent('mtc-cityhall:server:BuyIdentity', function(id)
-    local Player = QBCore.Functions.GetPlayer(source)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
     if not Player then return end
 
     local item = Config.items[id]
     if not item then return end
 
     if not Player.Functions.RemoveMoney('bank', item.price, "Cityhall purchase") then 
-        TriggerClientEvent('QBCore:Notify', source, Lang['not_enough_money'], 'error')
+        TriggerClientEvent('QBCore:Notify', src, Lang['not_enough_money'], 'error')
         return 
     end
 
@@ -43,6 +44,6 @@ RegisterNetEvent('mtc-cityhall:server:BuyIdentity', function(id)
     end
 
     Player.Functions.AddItem(item.item, 1, false, info)
-    TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items[item.item], 'add')
-    TriggerClientEvent('QBCore:Notify', source, Lang['bought']:format(item.label), 'success')
+    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item.item], 'add')
+    TriggerClientEvent('QBCore:Notify', src, Lang['bought']:format(item.label), 'success')
 end)
