@@ -22,24 +22,44 @@ Config.blip = {
 }
 
 -- Jobs for hire
-Config.jobs = {{
-    job = "police",
-    label = "LSPD",
-    salary = 100
-}, {
-    job = 'ambulance',
-    label = "EMS",
-    salary = -1
-}}
+Config.jobs = {
+    {
+        job = "trucker",
+        label = "Trucker",
+        salary = 50
+    },
+    {
+        job = "taxi",
+        label = "Taxi",
+        salary = 50
+    },
+    {
+        job = "tow",
+        label = "Tow Truck",
+        salary = 50
+    },
+    {
+        job = "reporter",
+        label = "News Reporter",
+        salary = 50
+    },
+}
 
 -- Items for purchase
 Config.items = {{
     item = "id_card",
+    meta = 'id',
     label = "ID Card",
     price = 100
 }, {
     item = "driver_license",
     label = "Driver License",
+    meta = 'driver',
+    price = 100
+}, {
+    item = "weaponlicense",
+    label = "Weapon License",
+    meta = 'weapon',
     price = 100
 }}
 
@@ -50,4 +70,7 @@ Config.licenseItems = {{
 }, {
     item = 'driver_license',
     label = 'Driver License'
+}, {
+    item = 'weaponlicense',
+    label = 'Weapon License'
 }}
