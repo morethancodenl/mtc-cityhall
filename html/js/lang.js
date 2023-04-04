@@ -28,11 +28,11 @@ let stringsEN = {
     "text_information": "My info",
     "text_close": "Close",
 
-    "text_identification": "Identification",
-    "desc_identification": "Below you can see which identification methods you currently have.",
+    "text_identification": "ID Cards",
+    "desc_identification": "Below you can see which ID cards you currently have in your pockets.",
 
-    "text_licenses": "Licenses",
-    "desc_licenses": "Below you can see which licenses you currently have.",
+    "text_licenses": "Permissions",
+    "desc_licenses": "Below you can see which ID cards you currently have access to print.",
 
     "text_buy": "Buy",
     "text_apply": "Apply",
