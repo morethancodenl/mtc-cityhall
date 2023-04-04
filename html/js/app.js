@@ -157,12 +157,12 @@ class Main {
         document.getElementById('Sidebar.close').onclick = () => {
             this.HideCityhall();
         }
-        document.onkeyup = function (data) {
+        
+        document.onkeyup = (data) => {
             if (data.which == 27) {
                 this.HideCityhall();
-                return;
             }
-        };
+        }
     }
 }
 
