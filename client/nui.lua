@@ -55,13 +55,24 @@ end
 --- Setup the items for the NUI
 function NUI:SetupItems()
     local items = {}
+    items[1] = {
+        name = "ID Card",
+        price = 100,
+        id = 1
+    }
+
+    local PlayerLicenses = QBCore.Functions.GetPlayerData().metadata["licences"]
 
     for key = 1, #Config.items, 1 do
-        items[#items + 1] = {
-            name = Config.items[key].label,
-            price = Config.items[key].price,
-            id = key
-        }
+        for k, value in pairs(PlayerLicenses) do
+            if (value == true and Config.items[key].meta == k) then
+                items[#items + 1] = {
+                    name = Config.items[key].label,
+                    price = Config.items[key].price,
+                    id = key
+                }
+            end
+        end
     end
 
     SendNUIMessage({
