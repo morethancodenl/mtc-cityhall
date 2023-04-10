@@ -5,7 +5,7 @@ RegisterNetEvent('mtc-cityhall:server:ApplyJob', function(id)
     local job = Config.jobs[id]
     if not job then return end
 
-    Player.Functions.SetJob(job.job)
+    Player.Functions.SetJob(job.job, 0)
     TriggerClientEvent('QBCore:Notify', source, Lang['hired']:format(job.label), 'success')
 end)
 
