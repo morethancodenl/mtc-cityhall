@@ -41,7 +41,7 @@ function NUI:SetupJobs()
     for key = 1, #Config.jobs, 1 do
         jobs[#jobs + 1] = {
             name = Config.jobs[key].label,
-            salary = Config.jobs[key].salary,
+            salary = QBCore.Shared.Jobs[Config.jobs[key].job].grades["0"].payment, --Config.jobs[key].salary,
             id = key
         }
     end
