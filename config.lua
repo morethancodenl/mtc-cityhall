@@ -2,6 +2,8 @@ QBCore = exports['qb-core']:GetCoreObject()
 
 Config = {}
 
+Config.RenewedPhone = false --> Set to true if you are using Renewed scripts their qb-phone
+
 -- Ped spawner
 Config.ped = {
     enabled = true,
