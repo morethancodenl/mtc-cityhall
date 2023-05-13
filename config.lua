@@ -49,20 +49,21 @@ Config.jobs = {
 
 -- Items for purchase
 Config.items = {{
-    item = "id_card",
-    meta = 'id',
-    label = "ID Card",
-    price = 100
+    item = "id_card", -- Name of ID Document
+    meta = 'id', -- Metadata to check if eligible for ID document
+    label = "ID Card", -- Label to show in the menu for the ID document
+    price = 100 -- Price of the ID document
 }, {
-    item = "driver_license",
-    label = "Driver License",
-    meta = 'driver',
-    price = 100
+    item = "driver_license", -- Name of ID Document
+    label = "Driver License",-- Label to show in the menu for the ID document
+    meta = 'driver',  -- Metadata to check if eligible for ID document
+    price = 100 -- Price of the ID document
 }, {
-    item = "weaponlicense",
-    label = "Weapon License",
-    meta = 'weapon',
-    price = 100
+    item = "weaponlicense", -- Name of ID Document
+    label = "Weapon License", -- Label to show in the menu for the ID document
+    meta = 'weapon',  -- Metadata to check if eligible for ID document
+    --job = 'ammunation' -- Job check this will show the ID document to anyone with this job, Make sure to comment out "meta" if wanting to use the job check
+    price = 100 -- Price of the ID document
 }}
 
 -- Items shown in the information tab
