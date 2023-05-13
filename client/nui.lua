@@ -62,6 +62,7 @@ function NUI:SetupItems()
     }
 
     local PlayerLicenses = QBCore.Functions.GetPlayerData().metadata["licences"]
+    local PlayerJobLicenses = QBCore.Functions.GetPlayerData().job.name
 
     for key = 1, #Config.items, 1 do
         for k, value in pairs(PlayerLicenses) do
@@ -72,6 +73,13 @@ function NUI:SetupItems()
                     id = key
                 }
             end
+        end
+        if (Config.items[key].job == PlayerJobLicenses) then
+            items[#items + 1] = {
+                name = Config.items[key].label,
+                price = Config.items[key].price,
+                id = key
+        }
         end
     end
 
