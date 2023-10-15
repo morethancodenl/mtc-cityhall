@@ -1,8 +1,8 @@
 fx_version 'cerulean'
 games { 'rdr3', 'gta5' }
 
-author 'More Then Code'
-description 'QBCore cityhall'
+author 'More Than Code'
+description 'Cityhall (mtc-cityhall) 1.0.0'
 version '1.0.0'
 
 client_scripts {
