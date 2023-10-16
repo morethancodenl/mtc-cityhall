@@ -6,7 +6,7 @@
 - [Discord](https://discord.gg/APFHf9hhkG)
 - [Tebex (Paid scripts)](https://mtc.tebex.io/)
 
-### How to use?
+### How to use it?
 
 1. Clone the repository
 2. Rename the folder to `mtc-cityhall`
@@ -17,12 +17,12 @@
 
 - [qb-core](https://github.com/qbcore-framework/qb-core) or [qbx-core](https://github.com/Qbox-project/qbx-core)
 
-### How to change the UI language
+### How to change the UI language?
 
 1. Go to 'html/js/lang.js'
 2. Change the strings
 
-### How to change the script language
+### How to change the locale?
 
 1. Go to 'config.lua'
 2. Change the strings
