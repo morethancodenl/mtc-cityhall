@@ -1,4 +1,4 @@
-![Cityhall](https://i.imgur.com/FgZZlTT.png)
+![cityhall](https://i.imgur.com/hlkp8WK.png)
 
 # MTC Cityhall
 
@@ -34,3 +34,7 @@
 ![jobs](./showcase/jobs.png)
 ![items](./showcase/items.png)
 ![info](./showcase/info.png)
+
+## 👉 Join our community
+
+[![Discord](https://discord.com/api/guilds/1075048579758035014/widget.png?style=banner2)](https://discord.gg/cFuv5BMWzK)
