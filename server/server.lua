@@ -90,6 +90,18 @@ RegisterNetEvent('mtc-cityhall:server:ChangeApplicationStatus', function (data)
     })
 end)
 
+RegisterNetEvent('mtc-cityhall:server:DeleteApplication', function (data)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    if not Player then return end
+    if not Player.PlayerData.job.isboss then return end
+
+    MySQL.update.await('DELETE FROM cityhall_applications WHERE job = ? AND citizenid = ?', {
+        Player.PlayerData.job.name,
+        data.citizenid
+    })
+end)
+
 lib.callback.await('mtc-cityhall:server:GetApplications', function(source)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)

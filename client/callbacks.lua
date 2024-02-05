@@ -27,3 +27,8 @@ RegisterNuiCallback('GetApplications', function(_, cb)
     local applications = lib.callback.await('mtc-cityhall:server:GetApplications', false)
     cb(applications)
 end)
+
+RegisterNuiCallback('DeleteApplication', function (data, cb)
+    TriggerServerEvent('mtc-cityhall:server:DeleteApplication', data)
+    cb('ok')
+end)
