@@ -72,6 +72,7 @@ RegisterNetEvent('mtc-cityhall:server:ChangeApplicationStatus', function (data)
     local Player = QBCore.Functions.GetPlayer(src)
     local SharedJobData = QBCore.Shared.Jobs[Player.PlayerData.job.name]
     if not Player then return end
+    if not Player.PlayerData.job.isboss then return end
 
     local sql = MySQL.await.update('UPDATE `cityhall_applications` SET status = ? WHERE citizenid = ? AND job = ?', {
         data.status,
@@ -87,4 +88,17 @@ RegisterNetEvent('mtc-cityhall:server:ChangeApplicationStatus', function (data)
         subject = "Application Status Changed",
         message = Lang['mail_status']:format(SharedJobData.label, data.status)
     })
+end)
+
+lib.callback.await('mtc-cityhall:server:GetApplications', function(source)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    if not Player then return end
+    if not Player.PlayerData.job.isboss then return end
+
+    local sql = MySQL.await.fetchAll('SELECT * FROM `cityhall_applications` WHERE job = ?', {
+        Player.PlayerData.job.name
+    })
+
+    return sql
 end)

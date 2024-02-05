@@ -22,3 +22,8 @@ RegisterNuiCallback('ChangeApplicationStatus', function(data, cb)
     TriggerServerEvent('mtc-cityhall:server:ChangeApplicationStatus', data)
     cb('ok')
 end)
+
+RegisterNuiCallback('GetApplications', function(_, cb)
+    local applications = lib.callback.await('mtc-cityhall:server:GetApplications', false)
+    cb(applications)
+end)
