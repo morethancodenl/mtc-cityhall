@@ -70,6 +70,7 @@ end)
 RegisterNetEvent('mtc-cityhall:server:ChangeApplicationStatus', function (data)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
+    local SharedJobData = QBCore.Shared.Jobs[Player.PlayerData.job.name]
     if not Player then return end
 
     local sql = MySQL.await.update('UPDATE `cityhall_applications` SET status = ? WHERE citizenid = ? AND job = ?', {
@@ -80,4 +81,10 @@ RegisterNetEvent('mtc-cityhall:server:ChangeApplicationStatus', function (data)
 
     if not sql then return end
     TriggerClientEvent('QBCore:Notify', src, Lang['changed_status']:format(data.status), 'success')
+
+    exports['qb-phone']:sendNewMailToOffline(data.citizenid, {
+        sender = SharedJobData.label,
+        subject = "Application Status Changed",
+        message = Lang['mail_status']:format(SharedJobData.label, data.status)
+    })
 end)
