@@ -12,3 +12,8 @@ RegisterNuiCallback('BuyIdentity', function(data, cb)
     TriggerServerEvent('mtc-cityhall:server:BuyIdentity', data.id)
     cb('ok')
 end)
+
+RegisterNuiCallback('ApplyApplication', function (data, cb)
+    TriggerServerEvent('mtc-cityhall:server:ApplyApplication', data)
+    cb('ok')
+end)

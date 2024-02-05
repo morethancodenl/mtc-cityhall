@@ -50,3 +50,19 @@ RegisterNetEvent('mtc-cityhall:server:BuyIdentity', function(id)
     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item.item], 'add')
     TriggerClientEvent('QBCore:Notify', src, Lang['bought']:format(item.label), 'success')
 end)
+
+RegisterNetEvent('mtc-cityhall:server:ApplyApplication', function(data)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    if not Player then return end
+
+    local sql = MySQL.Inset.Await('INSERT INTO `cityhall_applications` (citizenid, job, motivation, status) VALUES (?, ?, ?)', {
+        Player.PlayerData.citizenid,
+        data.job,
+        data.motivation,
+        "pending"
+    })
+
+    if not sql then return end
+    TriggerClientEvent('QBCore:Notify', src, Lang['applied_job']:format(QBCore.Shared.Jobs[data.job].label), 'success')
+end)
