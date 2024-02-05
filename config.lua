@@ -43,6 +43,18 @@ Config.jobs = {
     },
 }
 
+Config.applicationjobs = {
+    {
+        job = 'police',
+        status = 'closed'
+    },
+    {
+        job = 'ambulance',
+        status = 'closed'
+    }
+}
+
+
 -- Items for purchase
 Config.items = {{
     item = "id_card",

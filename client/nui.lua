@@ -16,6 +16,7 @@ function NUI:Open()
     self:SetupLicenses()
     self:SetupJobs()
     self:SetupItems()
+    self:SetupApplicationJob()
 
     SendNUIMessage({
         type = 'open',
@@ -33,6 +34,24 @@ end
 function NUI:Close()
     SetNuiFocus(false, false)
 end
+
+function NUI:SetupApplicationJob()
+    local appJobs = {}
+
+    for key = 1, #Config.applicationjobs, 1 do
+        jobs[#jobs + 1] = {
+            name = QBCore.Shared.Jobs[Config.applicationjobs[key].job].label,
+            status = Config.applicationjobs[key].status,
+            id = key
+        }
+    end
+
+    SendNuiMessge({
+        type = 'applicationjobs',
+        jobs = appJobs
+    })
+end
+
 
 ---Setup the jobs for the NUI
 function NUI:SetupJobs()
