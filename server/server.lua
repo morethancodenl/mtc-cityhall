@@ -66,3 +66,18 @@ RegisterNetEvent('mtc-cityhall:server:ApplyApplication', function(data)
     if not sql then return end
     TriggerClientEvent('QBCore:Notify', src, Lang['applied_job']:format(QBCore.Shared.Jobs[data.job].label), 'success')
 end)
+
+RegisterNetEvent('mtc-cityhall:server:ChangeApplicationStatus', function (data)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    if not Player then return end
+
+    local sql = MySQL.await.update('UPDATE `cityhall_applications` SET status = ? WHERE citizenid = ? AND job = ?', {
+        data.status,
+        data.citizenid,
+        Player.PlayerData.job.name
+    })
+
+    if not sql then return end
+    TriggerClientEvent('QBCore:Notify', src, Lang['changed_status']:format(data.status), 'success')
+end)
