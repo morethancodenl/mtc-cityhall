@@ -3,6 +3,7 @@ QBCore = exports['qb-core']:GetCoreObject()
 Config = {}
 
 Config.RenewedPhone = false --> Set to true if you are using Renewed scripts their qb-phone
+Config.UmIdCard = false --> Set to true if you are using the um-idcard
 
 -- Ped spawner
 Config.ped = {
