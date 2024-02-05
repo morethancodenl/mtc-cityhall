@@ -41,7 +41,7 @@ function NUI:SetupApplicationJob()
     for key = 1, #Config.applicationjobs, 1 do
         jobs[#jobs + 1] = {
             name = QBCore.Shared.Jobs[Config.applicationjobs[key].job].label,
-            status = Config.applicationjobs[key].status,
+            opened = Config.applicationjobs[key].opened,
             id = key
         }
     end

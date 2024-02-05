@@ -46,11 +46,11 @@ Config.jobs = {
 Config.applicationjobs = {
     {
         job = 'police',
-        status = 'closed'
+        opened = true
     },
     {
         job = 'ambulance',
-        status = 'closed'
+        opened = true
     }
 }
 
