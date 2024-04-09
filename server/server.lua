@@ -25,28 +25,10 @@ RegisterNetEvent('mtc-cityhall:server:BuyIdentity', function(id)
         return 
     end
 
-    local info = {}
-    if item.item == "id_card" then
-        info.citizenid = Player.PlayerData.citizenid
-        info.firstname = Player.PlayerData.charinfo.firstname
-        info.lastname = Player.PlayerData.charinfo.lastname
-        info.birthdate = Player.PlayerData.charinfo.birthdate
-        info.gender = Player.PlayerData.charinfo.gender
-        info.nationality = Player.PlayerData.charinfo.nationality
-    elseif item.item == "driver_license" then
-        info.firstname = Player.PlayerData.charinfo.firstname
-        info.lastname = Player.PlayerData.charinfo.lastname
-        info.birthdate = Player.PlayerData.charinfo.birthdate
-        info.gender = Player.PlayerData.charinfo.gender
-        info.type = "Class C Driver License"
-    elseif item.item == "weaponlicense" then
-        info.firstname = Player.PlayerData.charinfo.firstname
-        info.lastname = Player.PlayerData.charinfo.lastname
-        info.birthdate = Player.PlayerData.charinfo.birthdate
-        info.gender = Player.PlayerData.charinfo.gender
+    if not giveIdCard(src, item) then  -- Handles id_card items using qb-inventory or um_idcard if it was not an id_card give the item to the user
+        Player.Functions.AddItem(item.item, 1, false)
     end
-
-    Player.Functions.AddItem(item.item, 1, false, info)
+    
     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item.item], 'add')
     TriggerClientEvent('QBCore:Notify', src, Lang['bought']:format(item.label), 'success')
 end)
