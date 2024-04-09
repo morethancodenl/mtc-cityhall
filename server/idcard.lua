@@ -26,6 +26,10 @@ local function default(source, item)
     return true
 end
 
+local function bl_idcard(source, item)
+    exports.bl_idcard:createLicense(source, item.item)
+end
+
 local function um_idcard(source, item)
     exports['um-idcard']:CreateMetaLicense(source, item.item)
 end
@@ -39,6 +43,10 @@ function giveIdCard(source, item)
     
     if Config.idcard == "default" then 
         return default(source, item)
+    end
+
+    if Config.idcard == "bl_idcard" then 
+        return bl_idcard(source, item)
     end
 
     if Config.idcard == "um_idcard" then 
