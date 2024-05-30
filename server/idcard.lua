@@ -22,20 +22,22 @@ local function default(source, item)
     end
 
     Player.Functions.AddItem(item.item, 1, false, info)
-
     return true
 end
 
 local function bl_idcard(source, item)
     exports.bl_idcard:createLicense(source, item.item)
+    return true
 end
 
 local function um_idcard(source, item)
     exports['um-idcard']:CreateMetaLicense(source, item.item)
+    return true
 end
 
 local function qbx_idcard(source, item)
     exports['qbx_idcard']:CreateMetaLicense(source, item.item)
+    return true
 end
 
 function giveIdCard(source, item)
