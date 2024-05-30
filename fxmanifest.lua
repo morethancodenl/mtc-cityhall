@@ -15,7 +15,8 @@ client_scripts {
 }
 
 server_scripts {
-    'server/*.lua',
+    'server/idcard.lua',
+    'server/server.lua'
 }
 
 shared_scripts {
