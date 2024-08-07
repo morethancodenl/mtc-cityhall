@@ -2,6 +2,8 @@ QBCore = exports['qb-core']:GetCoreObject()
 
 Config = {}
 
+Config.ox_inventory = true --Using OX_Inventory ?
+
 -- Ped spawner
 Config.ped = {
     enabled = true,

@@ -37,6 +37,7 @@ RegisterNetEvent('mtc-cityhall:server:BuyIdentity', function(id)
         info.lastname = Player.PlayerData.charinfo.lastname
         info.birthdate = Player.PlayerData.charinfo.birthdate
         info.gender = Player.PlayerData.charinfo.gender
+        info.type = "Class C Driver License"
         metadata.type = "Class C"
         metadata.description = "Firstname: " .. info.firstname .. "  \n Lastname: " .. info.lastname .. "  \nBirthdate: " .. info.birthdate .. "  \nGender: " .. info.gender
     elseif item.item == "weaponlicense" then
@@ -46,8 +47,11 @@ RegisterNetEvent('mtc-cityhall:server:BuyIdentity', function(id)
         info.gender = Player.PlayerData.charinfo.gender
         metadata.description = "Firstname: " .. info.firstname .. "  \n Lastname: " .. info.lastname .. "  \nBirthdate: " .. info.birthdate .. "  \nGender: " .. info.gender
     end
-
-    exports.ox_inventory:AddItem(source, item.item, 1, metadata)
+    if Config.OX_Inventory then 
+        exports.ox_inventory:AddItem(source, item.item, 1, metadata)
+    else
+        Player.Functions.AddItem(item.item, 1, false, info)
+    end
     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item.item], 'add')
     TriggerClientEvent('QBCore:Notify', src, Lang['bought']:format(item.label), 'success')
 end)
