@@ -26,7 +26,7 @@ Config.jobs = {
     {
         job = "trucker",
         label = "Trucker",
-        salary = 60
+        salary = 50
     },
     {
         job = "taxi",
@@ -36,22 +36,12 @@ Config.jobs = {
     {
         job = "tow",
         label = "Tow Truck",
-        salary = 70
+        salary = 50
     },
     {
         job = "reporter",
         label = "News Reporter",
-        salary = 50 
-    },
-    {
-        job = "garbage",
-        label = "Garbage Man",
-        salary = 80 
-    },
-    {
-        job = "bus",
-        label = "Bus Driver",
-        salary = 50 
+        salary = 50
     },
 }
 
