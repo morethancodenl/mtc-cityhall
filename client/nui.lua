@@ -41,7 +41,7 @@ function NUI:SetupJobs()
     for key = 1, #Config.jobs, 1 do
         jobs[#jobs + 1] = {
             name = Config.jobs[key].label,
-            salary = QBCore.Shared.Jobs[Config.jobs[key].job].grades["0"].payment, -- Pulls the salary data from QBCore, Credit to 42MARTIN42 for the change, instead of using a set config value using - Config.jobs[key].salary,
+            salary = Config.jobs[key].salary,
             id = key
         }
     end

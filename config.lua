@@ -2,9 +2,6 @@ QBCore = exports['qb-core']:GetCoreObject()
 
 Config = {}
 
-Config.RenewedPhone = false --> Set to true if you are using Renewed scripts their qb-phone
-Config.idcard = "default" -- default, bl_idcard, qbx_idcard, um_idcard
-
 -- Ped spawner
 Config.ped = {
     enabled = true,
@@ -29,18 +26,32 @@ Config.jobs = {
     {
         job = "trucker",
         label = "Trucker",
+        salary = 60
     },
     {
         job = "taxi",
         label = "Taxi",
+        salary = 50
     },
     {
         job = "tow",
         label = "Tow Truck",
+        salary = 70
     },
     {
         job = "reporter",
         label = "News Reporter",
+        salary = 50 
+    },
+    {
+        job = "garbage",
+        label = "Garbage Man",
+        salary = 80 
+    },
+    {
+        job = "bus",
+        label = "Bus Driver",
+        salary = 50 
     },
 }
 
@@ -49,20 +60,17 @@ Config.items = {{
     item = "id_card",
     meta = 'id',
     label = "ID Card",
-    price = 100,
-    id_card = true
+    price = 100
 }, {
     item = "driver_license",
     label = "Driver License",
     meta = 'driver',
-    price = 100,
-    id_card = true,
+    price = 100
 }, {
     item = "weaponlicense",
     label = "Weapon License",
     meta = 'weapon',
-    price = 100,
-    id_card = true
+    price = 100
 }}
 
 -- Items shown in the information tab

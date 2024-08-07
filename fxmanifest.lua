@@ -1,8 +1,8 @@
 fx_version 'cerulean'
 games { 'rdr3', 'gta5' }
 
-author 'More Than Code'
-description 'Cityhall (mtc-cityhall) 1.0.0'
+author 'More Then Code'
+description 'QBCore cityhall'
 version '1.0.0'
 
 client_scripts {
@@ -15,8 +15,7 @@ client_scripts {
 }
 
 server_scripts {
-    'server/idcard.lua',
-    'server/server.lua'
+    'server/*.lua',
 }
 
 shared_scripts {
