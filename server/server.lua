@@ -23,6 +23,7 @@ RegisterNetEvent('mtc-cityhall:server:BuyIdentity', function(id)
     end
 
     local info = {}
+    local metadata = {}
     if item.item == "id_card" then
         info.citizenid = Player.PlayerData.citizenid
         info.firstname = Player.PlayerData.charinfo.firstname
@@ -30,20 +31,23 @@ RegisterNetEvent('mtc-cityhall:server:BuyIdentity', function(id)
         info.birthdate = Player.PlayerData.charinfo.birthdate
         info.gender = Player.PlayerData.charinfo.gender
         info.nationality = Player.PlayerData.charinfo.nationality
+        metadata.description = "Citizen ID: " .. info.citizenid .. "  \nFirstname: " .. info.firstname .. "  \n Lastname: " .. info.lastname .. "  \nBirthdate: " .. info.birthdate .. "  \nGender: " .. info.gender .. "  \nNationality: " .. info.nationality
     elseif item.item == "driver_license" then
         info.firstname = Player.PlayerData.charinfo.firstname
         info.lastname = Player.PlayerData.charinfo.lastname
         info.birthdate = Player.PlayerData.charinfo.birthdate
         info.gender = Player.PlayerData.charinfo.gender
-        info.type = "Class C Driver License"
+        metadata.type = "Class C"
+        metadata.description = "Firstname: " .. info.firstname .. "  \n Lastname: " .. info.lastname .. "  \nBirthdate: " .. info.birthdate .. "  \nGender: " .. info.gender
     elseif item.item == "weaponlicense" then
         info.firstname = Player.PlayerData.charinfo.firstname
         info.lastname = Player.PlayerData.charinfo.lastname
         info.birthdate = Player.PlayerData.charinfo.birthdate
         info.gender = Player.PlayerData.charinfo.gender
+        metadata.description = "Firstname: " .. info.firstname .. "  \n Lastname: " .. info.lastname .. "  \nBirthdate: " .. info.birthdate .. "  \nGender: " .. info.gender
     end
 
-    Player.Functions.AddItem(item.item, 1, false, info)
+    exports.ox_inventory:AddItem(source, item.item, 1, metadata)
     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item.item], 'add')
     TriggerClientEvent('QBCore:Notify', src, Lang['bought']:format(item.label), 'success')
 end)
