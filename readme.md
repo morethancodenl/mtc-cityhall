@@ -14,8 +14,7 @@
 4. Trigger the event `mtc-cityhall:client:open` or the `Open` export.
 
 ### Dependencies
-
-- [qb-core](https://github.com/qbcore-framework/qb-core) or [qbx-core](https://github.com/Qbox-project/qbx-core)
+- [qbx_core](https://github.com/Qbox-project/qbx_core)
 
 ### How to change the UI language?
 

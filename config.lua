@@ -3,7 +3,7 @@ QBCore = exports['qb-core']:GetCoreObject()
 Config = {}
 
 Config.RenewedPhone = false --> Set to true if you are using Renewed scripts their qb-phone
-Config.idcard = "default" -- default, bl_idcard, qbx_idcard, um_idcard
+Config.idcard = "qbx_idcard" -- bl_idcard, qbx_idcard, um_idcard
 
 -- Ped spawner
 Config.ped = {

@@ -3,10 +3,9 @@ NUI = {}
 --- Open the NUI with playerdata setup
 function NUI:Open()
     local headshot = GetHeadshot()
-    local PlayerData = QBCore.Functions.GetPlayerData()
 
-    local name = PlayerData.charinfo.firstname .. " " .. PlayerData.charinfo.lastname
-    local citizenid = PlayerData.citizenid
+    local name = QBX.PlayerData.charinfo.firstname .. " " .. QBX.PlayerData.charinfo.lastname
+    local citizenid = QBX.PlayerData.citizenid
 
     if not headshot then
         print("Failed to get headshot")
@@ -37,11 +36,11 @@ end
 ---Setup the jobs for the NUI
 function NUI:SetupJobs()
     local jobs = {}
-    
+    local coreJobs = exports.qbx_core:GetJobs()
     for key = 1, #Config.jobs, 1 do
         jobs[#jobs + 1] = {
             name = Config.jobs[key].label,
-            salary = QBCore.Shared.Jobs[Config.jobs[key].job].grades["0"].payment, -- Pulls the salary data from QBCore, Credit to 42MARTIN42 for the change, instead of using a set config value using - Config.jobs[key].salary,
+            salary = coreJobs[Config.jobs[key].job].grades[0].payment, -- Pulls the salary data from QBCore, Credit to 42MARTIN42 for the change, instead of using a set config value using - Config.jobs[key].salary,
             id = key
         }
     end
@@ -55,13 +54,7 @@ end
 --- Setup the items for the NUI
 function NUI:SetupItems()
     local items = {}
-    items[1] = {
-        name = "ID Card",
-        price = 100,
-        id = 1
-    }
-
-    local PlayerLicenses = QBCore.Functions.GetPlayerData().metadata["licences"]
+    local PlayerLicenses = QBX.PlayerData.metadata["licences"]
 
     for key = 1, #Config.items, 1 do
         for k, value in pairs(PlayerLicenses) do
@@ -83,7 +76,7 @@ end
 
 --- Setup the licenses/information for the NUI
 function NUI:SetupLicenses()
-    local PlayerLicenses = QBCore.Functions.GetPlayerData().metadata["licences"]
+    local PlayerLicenses = QBX.PlayerData.metadata["licences"]
     local LicenseItems = {}
     local Licenses = {}
 
