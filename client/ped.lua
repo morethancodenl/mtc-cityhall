@@ -7,15 +7,15 @@ function point:onEnter()
     local pedHash = joaat(Config.ped.model)
     lib.requestModel(pedHash)
 
-    spawnedPed = CreatePed(4, pedHash, Config.ped.coords, 0.0, false,
-                                 false)
-    SetBlockingOfNonTemporaryEvents(ped, true)
-    SetPedDiesWhenInjured(ped, false)
-    SetPedCanPlayAmbientAnims(ped, true)
-    SetPedCanRagdollFromPlayerImpact(ped, false)
-    SetEntityInvincible(ped, true)
-    FreezeEntityPosition(ped, true)
-    SetEntityHeading(ped, Config.ped.coords.w)
+    spawnedPed = CreatePed(4, pedHash, Config.ped.coords, 0.0, false, false)
+
+    SetBlockingOfNonTemporaryEvents(spawnedPed, true)
+    SetPedDiesWhenInjured(spawnedPed, false)
+    SetPedCanPlayAmbientAnims(spawnedPed, true)
+    SetPedCanRagdollFromPlayerImpact(spawnedPed, false)
+    SetEntityInvincible(spawnedPed, true)
+    FreezeEntityPosition(spawnedPed, true)
+    SetEntityHeading(spawnedPed, Config.ped.coords.w)
 
     exports.ox_target:addLocalEntity(spawnedPed, {
         {
