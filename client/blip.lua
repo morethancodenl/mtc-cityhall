@@ -22,6 +22,6 @@ AddEventHandler('onResourceStop', function(resource)
 end)
 
 CreateThread(function()
-    if not Config.blip.enabled then return end
-    GenerateBlip(Config.blip)
+    if not config.blip.enabled then return end
+    GenerateBlip(config.blip)
 end)

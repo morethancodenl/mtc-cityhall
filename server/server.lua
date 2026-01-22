@@ -1,31 +1,33 @@
+config = require('config')
+
 RegisterNetEvent('mtc-cityhall:server:ApplyJob', function(id)
     local xPlayer = exports.qbx_core:GetPlayer(source)
     if not xPlayer then return end
 
-    local job = Config.jobs[id]
+    local job = config.jobs[id]
     if not job then return end
 
     xPlayer.Functions.SetJob(job.job, 0)
-    if Config.RenewedPhone then 
+    if config.RenewedPhone then 
         exports['qb-phone']:hireUser(job.job, Player.PlayerData.citizenid, 0)
     end
-    TriggerClientEvent('QBCore:Notify', source, Lang['hired']:format(job.label), 'success')
+    exports.qbx_core:Notify(source, Lang['hired']:format(job.label), 'success')
 end)
 
 RegisterNetEvent('mtc-cityhall:server:BuyIdentity', function(id)
     local xPlayer = exports.qbx_core:GetPlayer(source)
     if not xPlayer then return end
 
-    local item = Config.items[id]
+    local item = config.items[id]
     if not item then return end
 
     if not exports.ox_inventory:CanCarryItem(source, item.item) then
-        TriggerClientEvent('QBCore:Notify', source, Lang['no_space'], 'error')
+        exports.qbx_core:Notify(source, Lang['no_space'], 'error')
         return
     end
 
     if not xPlayer.Functions.RemoveMoney('bank', item.price, "Cityhall purchase") then 
-        TriggerClientEvent('QBCore:Notify', source, Lang['not_enough_money'], 'error')
+        exports.qbx_core:Notify(source, Lang['not_enough_money'], 'error')
         return 
     end
 
@@ -33,5 +35,5 @@ RegisterNetEvent('mtc-cityhall:server:BuyIdentity', function(id)
         exports.ox_inventory:AddItem(source, item.item)
     end
     
-    TriggerClientEvent('QBCore:Notify', source, Lang['bought']:format(item.label), 'success')
+    exports.qbx_core:Notify(source, Lang['bought']:format(item.label), 'success')
 end)

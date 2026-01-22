@@ -23,7 +23,6 @@ server_scripts {
 shared_scripts {
     '@ox_lib/init.lua',
     '@qbx_core/modules/lib.lua',
-    'config.lua',
     'lang.lua',
 }
 
@@ -31,7 +30,8 @@ files {
     'html/index.html',
     'html/css/*.css',
     'html/js/*.js',
-    'html/fonts/*'
+    'html/fonts/*',
+    'config.lua'
 }
 
 ui_page 'html/index.html'

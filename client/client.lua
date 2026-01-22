@@ -1,3 +1,5 @@
+config = require('config')
+
 exports("Open", function()
     NUI:Open()
 end)

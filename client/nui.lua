@@ -37,10 +37,10 @@ end
 function NUI:SetupJobs()
     local jobs = {}
     local coreJobs = exports.qbx_core:GetJobs()
-    for key = 1, #Config.jobs, 1 do
+    for key = 1, #config.jobs, 1 do
         jobs[#jobs + 1] = {
-            name = Config.jobs[key].label,
-            salary = coreJobs[Config.jobs[key].job].grades[0].payment, -- Pulls the salary data from QBCore, Credit to 42MARTIN42 for the change, instead of using a set config value using - Config.jobs[key].salary,
+            name = config.jobs[key].label,
+            salary = coreJobs[config.jobs[key].job].grades[0].payment, -- Pulls the salary data from QBCore, Credit to 42MARTIN42 for the change, instead of using a set config value using - config.jobs[key].salary,
             id = key
         }
     end
@@ -56,12 +56,12 @@ function NUI:SetupItems()
     local items = {}
     local PlayerLicenses = QBX.PlayerData.metadata["licences"]
 
-    for key = 1, #Config.items, 1 do
+    for key = 1, #config.items, 1 do
         for k, value in pairs(PlayerLicenses) do
-            if (value == true and Config.items[key].meta == k) then
+            if (value == true and config.items[key].meta == k) then
                 items[#items + 1] = {
-                    name = Config.items[key].label,
-                    price = Config.items[key].price,
+                    name = config.items[key].label,
+                    price = config.items[key].price,
                     id = key
                 }
             end
@@ -80,11 +80,11 @@ function NUI:SetupLicenses()
     local LicenseItems = {}
     local Licenses = {}
 
-    for i = 1, #Config.licenseItems, 1 do
-        local item = Config.licenseItems[i]
+    for i = 1, #config.licenseItems, 1 do
+        local item = config.licenseItems[i]
         LicenseItems[#LicenseItems + 1] = {
             item = item.label,
-            hasItem = QBCore.Functions.HasItem(item.item),
+            hasItem = exports.ox_inventory:Search('count', item.item) > 0,
         }
     end
 

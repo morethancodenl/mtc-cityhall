@@ -1,13 +1,13 @@
 local spawnedPed = nil
 
-local point = lib.points.new({coords = Config.ped.coords.xyz, distance = 15})
+local point = lib.points.new({coords = config.ped.coords.xyz, distance = 15})
 
 function point:onEnter()
     if spawnedPed then return end
-    local pedHash = joaat(Config.ped.model)
+    local pedHash = joaat(config.ped.model)
     lib.requestModel(pedHash)
 
-    spawnedPed = CreatePed(4, pedHash, Config.ped.coords, 0.0, false, false)
+    spawnedPed = CreatePed(4, pedHash, config.ped.coords, 0.0, false, false)
 
     SetBlockingOfNonTemporaryEvents(spawnedPed, true)
     SetPedDiesWhenInjured(spawnedPed, false)
@@ -15,13 +15,13 @@ function point:onEnter()
     SetPedCanRagdollFromPlayerImpact(spawnedPed, false)
     SetEntityInvincible(spawnedPed, true)
     FreezeEntityPosition(spawnedPed, true)
-    SetEntityHeading(spawnedPed, Config.ped.coords.w)
+    SetEntityHeading(spawnedPed, config.ped.coords.w)
 
     exports.ox_target:addLocalEntity(spawnedPed, {
         {
             event = "mtc-cityhall:client:open",
             icon = "fas fa-id-card",
-            label = Config.ped.label
+            label = config.ped.label
         }
     })
 end
