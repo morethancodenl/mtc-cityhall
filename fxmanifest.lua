@@ -11,8 +11,8 @@ client_scripts {
     'client/nui.lua',
     'client/callbacks.lua',
     'client/client.lua',
+    'client/blip.lua',
     'client/ped.lua',
-    'client/blip.lua'
 }
 
 server_scripts {
@@ -31,6 +31,7 @@ files {
     'html/css/*.css',
     'html/js/*.js',
     'html/fonts/*',
+    'locales/*.json',
     'config.lua'
 }
 

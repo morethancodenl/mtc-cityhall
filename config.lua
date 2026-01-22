@@ -2,25 +2,40 @@ return {
     RenewedPhone = false, --> Set to true if you are using Renewed scripts their qb-phone
     idcard = "qbx_idcard", -- bl_idcard, qbx_idcard, um_idcard
 
-    -- Ped spawner
-    ped = {
-        enabled = true,
-        model = "a_m_m_indian_01",
-        coords = vector4(-266.88833618164, -961.62231445313, 30.227128982544, 210.22946166992),
-        label = "Open cityhall"
+    locations = {
+        cityhall = {
+            enabled = true,
+            model = "a_m_m_indian_01",
+            coords = vec4(-266.88, -961.62, 30.22, 210.22),
+            label = "Open cityhall",
+            blipEnabled = true,
+            blipData = {
+                Name = "Cityhall",
+                SpriteId = 487,
+                Color = 2,
+                Scale = 1.3,
+                ShortRange = true,
+                Coords = vec3(-266.88, -961.62, 30.22),
+                Alpha = 255,
+            }
+        },
+        cityhall2 = {
+            enabled = true,
+            model = "a_m_m_indian_01",
+            coords = vec4(-544.55, -203.27, 37.22, 211.0),
+            label = "Open cityhall",
+            blipEnabled = true,
+            blipData = {
+                Name = "Cityhall",
+                SpriteId = 487,
+                Color = 2,
+                Scale = 1.3,
+                ShortRange = true,
+                Coords = vec3(-544.55, -203.27, 37.22),
+                Alpha = 255,
+            }
+        }
     },
-
-    blip = {
-        enabled = true,
-        Name = "Cityhall",
-        SpriteId = 487,
-        Color = 2,
-        Scale = 1.3,
-        ShortRange = true,
-        Alpha = 255,
-        Coords = vector3(-266.88833618164, -961.62231445313, 31.227128982544)
-    },
-
     -- Jobs for hire
     jobs = {
         {

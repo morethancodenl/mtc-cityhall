@@ -1,33 +1,56 @@
 local spawnedPed = nil
+local cached_points = {}
 
-local point = lib.points.new({coords = config.ped.coords.xyz, distance = 15})
+for id, pointData in pairs(config.locations) do
+    if pointData.enabled then
+        local point = lib.points.new({ coords = pointData.coords, distance = 15})
 
-function point:onEnter()
-    if spawnedPed then return end
-    local pedHash = joaat(config.ped.model)
-    lib.requestModel(pedHash)
+        if pointData.blipEnabled then
+            GenerateBlip(pointData.blipData)
+        end
 
-    spawnedPed = CreatePed(4, pedHash, config.ped.coords, 0.0, false, false)
+        function point:onEnter()
+            if spawnedPed then return end
+            local pedHash = joaat(pointData.model)
+            lib.requestModel(pedHash)
 
-    SetBlockingOfNonTemporaryEvents(spawnedPed, true)
-    SetPedDiesWhenInjured(spawnedPed, false)
-    SetPedCanPlayAmbientAnims(spawnedPed, true)
-    SetPedCanRagdollFromPlayerImpact(spawnedPed, false)
-    SetEntityInvincible(spawnedPed, true)
-    FreezeEntityPosition(spawnedPed, true)
-    SetEntityHeading(spawnedPed, config.ped.coords.w)
+            spawnedPed = CreatePed(4, pedHash, pointData.coords.x, pointData.coords.y, pointData.coords.z, pointData.coords.w, false, false)
 
-    exports.ox_target:addLocalEntity(spawnedPed, {
-        {
-            event = "mtc-cityhall:client:open",
-            icon = "fas fa-id-card",
-            label = config.ped.label
-        }
-    })
+            SetBlockingOfNonTemporaryEvents(spawnedPed, true)
+            SetPedDiesWhenInjured(spawnedPed, false)
+            SetPedCanPlayAmbientAnims(spawnedPed, true)
+            SetPedCanRagdollFromPlayerImpact(spawnedPed, false)
+            SetEntityInvincible(spawnedPed, true)
+            FreezeEntityPosition(spawnedPed, true)
+
+            exports.ox_target:addLocalEntity(spawnedPed, {
+                {
+                    event = "mtc-cityhall:client:open",
+                    icon = "fas fa-id-card",
+                    label = pointData.label,
+                }
+            })
+
+            SetModelAsNoLongerNeeded(pedHash)
+        end
+
+        function point:onExit()
+            if not spawnedPed then return end
+            DeleteEntity(spawnedPed)
+            spawnedPed = nil
+        end
+
+        cached_points[id] = point
+    end
 end
 
-function point:onExit()
-    if not spawnedPed then return end
-    DeleteEntity(spawnedPed)
-    spawnedPed = nil
-end
+AddEventHandler('onResourceStop', function(resource)
+    if resource ~= GetCurrentResourceName() then return end
+    if spawnedPed then
+        DeleteEntity(spawnedPed)
+        spawnedPed = nil
+    end
+    for id, point in pairs(cached_points) do
+        point:remove()
+    end
+end)

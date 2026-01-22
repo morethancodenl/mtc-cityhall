@@ -1,7 +1,7 @@
-local blip = nil
+local cached_blips = {}
 
 function GenerateBlip(data)
-    blip = AddBlipForCoord(data.Coords.x, data.Coords.y, data.Coords.z)
+    local blip = AddBlipForCoord(data.Coords.x, data.Coords.y, data.Coords.z)
     SetBlipSprite(blip, data.SpriteId)
     SetBlipDisplay(blip, 4)
     SetBlipScale(blip, data.Scale)
@@ -11,17 +11,13 @@ function GenerateBlip(data)
     BeginTextCommandSetBlipName("STRING")
     AddTextComponentString(data.Name)
     EndTextCommandSetBlipName(blip)
+    cached_blips[#cached_blips+1] = blip
 end
 
 AddEventHandler('onResourceStop', function(resource)
    if resource == GetCurrentResourceName() then
-        if blip ~= nil then
-             RemoveBlip(blip)
+        for blipId in pairs(cached_blips) do
+            RemoveBlip(blipId)
         end
    end
-end)
-
-CreateThread(function()
-    if not config.blip.enabled then return end
-    GenerateBlip(config.blip)
 end)
